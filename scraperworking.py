@@ -48,7 +48,7 @@ def fetch_html(url):
 
 # Send an SMS using Twilio
 def send_message(msg):
-	if (now.hour == 13 and 40 > now.minute < 45):
+	if (now.hour == 13 and 40 < now.minute < 45):
 		_ = client.messages.create(
 			body = msg,
 			from_ = scrapervariables.twilio_phone_number,
