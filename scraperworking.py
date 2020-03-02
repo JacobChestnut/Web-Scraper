@@ -55,7 +55,7 @@ def send_message(msg):
 		)
 		
 	else:
-		return("It is not time to send the message yet")
+		print("It is not time to send the message yet")
 		
 		
 		
