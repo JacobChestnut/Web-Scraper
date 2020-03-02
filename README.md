@@ -11,7 +11,7 @@ pip install requests
 ```
 - You will also need a [Twilio](https://www.twilio.com) account.
 
-## scrapingvariables.py
+## scrapervariables.py
 You will need to create a file called "scrapervariables.py" with the following variables:
 ```
 url = "THE WEBSITE YOU WANT TO MONITER"
