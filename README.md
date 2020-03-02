@@ -2,7 +2,7 @@
 
 This program will text a phone number (through [Twilio](https://www.twilio.com)) if a website that you have chosen to monitor has changed. All you need to do is enter the website URL, the number you want the text from, and the number you want the text to go to. This is done through scrapervariables.py.
 
-Specific to this code, the program will scrape a weather report for the current weather, and send it to the user's phone number at 7am.
+Specific to this code, the program will scrape a weather report for the current weather, and send it to the user's phone number at 6am.
 
 ## To Begin
 - You will need to import requests.
