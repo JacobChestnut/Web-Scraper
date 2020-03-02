@@ -15,7 +15,6 @@ now = datetime.datetime.now()
 
 url = "https://www.kgw.com/weather"
 response = get(url)
-# print(response.text[:500])
 
 from bs4 import BeautifulSoup
 html_soup = BeautifulSoup(response.text, "html.parser")
@@ -48,7 +47,7 @@ def fetch_html(url):
 
 # Send an SMS using Twilio
 def send_message(msg):
-	if (now.hour == 13 and 40 < now.minute < 45):
+	if (now.hour == 7 and 0 < now.minute < 1):
 		_ = client.messages.create(
 			body = msg,
 			from_ = scrapervariables.twilio_phone_number,
@@ -56,7 +55,7 @@ def send_message(msg):
 		)
 		
 	else:
-		print("It is not time to send the message yet")
+		return("It is not time to send the message yet")
 		
 		
 		
@@ -68,8 +67,7 @@ def monitor(url, delay):
         time.sleep(delay)
         new_html = fetch_html(url)
 
-        # If the HTML of the page is different than last time,
-        # send a text message
+        # If the HTML of the page is different than last time send a text message
         if new_html != old_html:
             send_message("The temperature today is: " + weather_container + "°F!")
             old_html = new_html
@@ -108,17 +106,9 @@ print(
     )
 )
 
-# Start monitoring website, exit when user
-# presses Ctrl+C (which sends a KeyboardInterrupt)
+# Start monitoring website, exit when user presses Ctrl+C (which sends a KeyboardInterrupt)
 
 try:
     monitor(args.url, float(args.delay))
 except KeyboardInterrupt:
     print("Ending monitoring...")
-	
-
-# print(type(weather_container))
-# print(len(weather_container))
-# weatherNow = weatherNow.div.div.div.div.div.find("span", class_ = "story-snapshot-with-abstract__mobile-title dot-ellipsis dot-height-135")
-# print(type(weatherNow))
-# print(len(weatherNow))
