@@ -24,4 +24,4 @@ Don't forget the +1 before the phone numbers!
 
 ###### As a general courtesy, please respect a website's terms of use and don't overload their servers!
 
-[This is the link to the site containing information about the program](https://thecreator31.github.io/Web-Scraper/)
+[This is the link to the site containing information about the program](https://jacobchestnut.github.io/Web-Scraper/)
